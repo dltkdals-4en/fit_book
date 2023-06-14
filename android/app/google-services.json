@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "703574372381",
+    "project_id": "hyapp-3137e",
+    "storage_bucket": "hyapp-3137e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703574372381:android:2ac79ae5035429cacf96f4",
+        "android_client_info": {
+          "package_name": "com.fitbook.fit_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703574372381-un4r95j24l326jnj8332hnva0pgra4pr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG8qxmGvYIQnkfjt4pOxS6TtxzonSPxPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703574372381-un4r95j24l326jnj8332hnva0pgra4pr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
