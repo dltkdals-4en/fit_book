@@ -11,7 +11,9 @@ class FbHelper {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   User? user = FirebaseAuth.instance.currentUser;
 
-  Future<void> getUserInfo() async {}
+  Future<QuerySnapshot<Map<String, dynamic>>> getUserInfo() async {
+    return await _firestore.collection('user').get();
+  }
 
   Future<QuerySnapshot<Map<String, dynamic>>> getBookInfo() async {
     return await _firestore.collection('book').get();
@@ -37,5 +39,9 @@ class FbHelper {
         .where('userId', isEqualTo: id)
         .where('userPw', isEqualTo: pw);
     print(i);
+  }
+
+  Future<void> updateBookTag(String seletedBook, String selectedTag) async {
+    await _firestore.collection('book').doc(seletedBook).update({'keywordId': selectedTag});
   }
 }

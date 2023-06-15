@@ -1,11 +1,13 @@
-import 'package:fit_book/root/root.dart';
 import 'package:fit_book/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../book_details/book_details_page.dart';
-import '../login/login_page.dart';
-import '../mypage/mypage.dart';
+import '../pages/book_details/book_details_page.dart';
+import '../pages/login/login_page.dart';
+import '../pages/mypage/mypage.dart';
+import '../pages/root/root.dart';
+
+
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {

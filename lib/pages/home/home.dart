@@ -1,7 +1,8 @@
-import 'package:fit_book/home/widgets/recommend_book_list.dart';
 import 'package:fit_book/utils/colors.dart';
 import 'package:fit_book/utils/constants.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/recommend_book_list.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

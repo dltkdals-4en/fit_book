@@ -1,9 +1,10 @@
 import 'package:fit_book/providers/home_provider.dart';
 import 'package:fit_book/providers/server_data_provider.dart';
-import 'package:fit_book/publish/publish_page.dart';
 import 'package:fit_book/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../publish/publish_page.dart';
 
 class Root extends StatelessWidget {
   const Root({Key? key}) : super(key: key);
@@ -14,11 +15,13 @@ class Root extends StatelessWidget {
     var server = Provider.of<ServerDataProvider>(context);
     if (server.getBooks == false) {
       server.getBookList();
+      server.getUser();
       server.bookList = home.bookList;
     }
     return Scaffold(
       body: home.pageWidget.elementAt(home.pageIndex),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: KColors.white,
         currentIndex: home.pageIndex,
         onTap: (value) {
           if (value == 2) {
@@ -35,7 +38,10 @@ class Root extends StatelessWidget {
                 return PublishPage();
               },
             );
-          } else {
+          } else if(value ==3){
+            home.sortBookList();
+            home.changePage(value);
+          }else{
             home.changePage(value);
           }
         },

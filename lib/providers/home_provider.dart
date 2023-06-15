@@ -1,16 +1,16 @@
-import 'package:fit_book/community/community_page.dart';
 import 'package:fit_book/models/book_model.dart';
-import 'package:fit_book/mypage/mypage.dart';
-import 'package:fit_book/publish/publish_page.dart';
-import 'package:fit_book/search/search_page.dart';
-import 'package:fit_book/utils/colors.dart';
+import 'package:fit_book/providers/fb_helper.dart';
+
 import 'package:flutter/material.dart';
 
-import '../home/home.dart';
+import '../pages/community/community_page.dart';
+import '../pages/home/home.dart';
+import '../pages/mypage/mypage.dart';
+import '../pages/search/search_page.dart';
 
 class HomeProvider with ChangeNotifier {
   List<BookModel> bookList = [];
-
+  List<BookModel> searchBookList =[];
   List<Widget> pageWidget = [
     Home(),
     CommunityPage(),
@@ -34,7 +34,6 @@ class HomeProvider with ChangeNotifier {
 
   String seletedBook = '';
   String selectedTag = '';
-  TextEditingController? _searchController = TextEditingController();
   String searchText = '';
 
 
@@ -62,7 +61,20 @@ class HomeProvider with ChangeNotifier {
     selectedTag = tagList[index];
     notifyListeners();
   }
-  Future<void> fbSaveTag() async{
 
+  Future<void> fbSaveTag() async {}
+
+  Future<void> updateBookTag() async {
+    await FbHelper().updateBookTag(seletedBook, selectedTag).then((value) {
+      selectedTag = '';
+      seletedBook = '';
+      searchText = '';
+      notifyListeners();
+    });
+  }
+
+  void sortBookList() {
+    searchBookList = bookList.where((element) => element.bookName!.contains(searchText)).toList();
+    notifyListeners();
   }
 }

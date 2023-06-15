@@ -149,7 +149,10 @@ class PublishPage extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                home.updateBookTag();
+                Navigator.pop(context);
+              },
               style: ElevatedButton.styleFrom(
                   fixedSize: Size(size.width, 35),
                   backgroundColor: KColors.lightPrimary,

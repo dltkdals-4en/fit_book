@@ -4,8 +4,9 @@ import 'package:fit_book/providers/server_data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../utils/colors.dart';
-import '../../utils/constants.dart';
+import '../../../utils/colors.dart';
+import '../../../utils/constants.dart';
+
 
 class RecommendBookList extends StatelessWidget {
   const RecommendBookList(this.title, {Key? key}) : super(key: key);

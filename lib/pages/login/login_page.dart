@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../utils/constants.dart';
+import '../../utils/constants.dart';
 import 'widgets/input_login_info.dart';
 import 'widgets/login_btn.dart';
 
